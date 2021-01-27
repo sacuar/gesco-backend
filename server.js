@@ -29,7 +29,7 @@ low(adapter)
       if (!validateUsername(username)) {
         res.send("invalid username");
       } else if (!validateEmail(email)) {
-        res.send("invalid password");
+        res.send("invalid email");
       } else if (!validatePassword(password)) {
         res.send("invalid password");
       } else {
