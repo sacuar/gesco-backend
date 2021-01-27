@@ -27,20 +27,20 @@ low(adapter)
       const password = req.body.password;
 
       if (!validateUsername(username)) {
-        res.send("invalid username");
+        res.send({ error: "invalid username" });
       } else if (!validateEmail(email)) {
-        res.send("invalid email");
+        res.send({ error: "invalid email" });
       } else if (!validatePassword(password)) {
-        res.send("invalid password");
+        res.send({ error: "invalid password" });
       } else {
         if (
           await db.get("users").find({ username: req.body.username }).value()
         ) {
-          res.send("username already exists");
+          res.send({ error: "username already exists" });
         } else if (
           await db.get("users").find({ email: req.body.email }).value()
         ) {
-          res.send("email is already linked to an account");
+          res.send({ error: "email is already linked to an account" });
         } else {
           db.get("users")
             .push({
@@ -70,10 +70,10 @@ low(adapter)
         if (user.password === password) {
           res.send({ id: user.id });
         } else {
-          res.send("wrong password");
+          res.send({ error: "wrong password" });
         }
       } else {
-        res.send("user not found");
+        res.send({ error: "user not found" });
       }
     });
 
