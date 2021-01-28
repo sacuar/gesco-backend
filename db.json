@@ -1,11 +1,14 @@
-{
-  "posts": [
-    {
-      "id": "sacuar",
-      "title": "hello"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+[
+  {
+    "id": "Sacuar"
+    "title": "Post 1"
+  },
+  {
+    "id": 2,
+    "title": "Post 2"
+  },
+  {
+    "id": 3,
+    "title": "Post 3"
   }
-}
+]
